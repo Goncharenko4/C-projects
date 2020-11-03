@@ -1,29 +1,32 @@
+#include <iostream>
 #include <algorithm>
 #include <string>
-#include <iostream>
 #include <vector>
 
 using namespace std;
-int base = 10; // система счисления
+int base = 10; // number system
 
 /*
------------------------------------------------------------------------------
-  функция делит число a на короткое число b и возвращает остаток от деления
------------------------------------------------------------------------------
+    The function divides the number 'a' by a short number 'b'
+    and returns the remainder of division:
 */
-
-int Remainder_of_the_division(vector<int> a, int b){
-    // r - обозначает текущий остаток, к которому будет приписана очередная цифра
+int Remainder_of_the_division(vector<int> a, int b)
+{
+    /*
+        r - indicates the current balance to which the next digit will be assigned
+        Initially the remainder is 0
+    */
     int r = 0;
-    // изначально остаток 0
-
-    int n1 = a.size(); // длина большого числа
-    for(int i=0; i<n1; i++){
-        // цикл от старших цифр к младшим
+    unsigned long n1 = a.size(); // length of a large number
+    
+    /*
+        Cycle from the highest digits to the lowest, assigning the next digit
+        Writing a quotient of division to the result
+    */
+    for(int i = 0; i < n1; i++)
+    {
         r = r * base + a[i];
-        // приписывание очередной цифры
         a[i] = r / b;
-        // запись частного в результат
         r %= b;
     }
     return r;
@@ -31,35 +34,40 @@ int Remainder_of_the_division(vector<int> a, int b){
 
 
 /*
-----------------------------------------
-  функция прибавляет к числу a число b
-----------------------------------------
+    The function adds the number 'b' to the number 'a':
 */
-
-vector<int> addition(vector<int> a, vector<int> b){
-    if(a[0] < b[0]){
+vector<int> addition(vector<int> a, vector<int> b)
+{
+    if(a[0] < b[0])
+    {
         a[0] = b[0];
     }
-    // складывать нужно до размера большего числа  
-    int r = 0;
+    
     /*
-        r - обозначает сколько у нас "в уме"
-        при сложение младших цифр в уме у нас 0
+         You need to add up to the size of a larger number
+         r - indicates how much we have "keep in mind"
+         When adding the lower digits in the mind, we have 0
     */
-    for(int i = 1; i <= a[0]; i++){
-        a[i] += b[i] +r; // сумма очередных цифр и переноса
-        if(a[i] >= 10){ // случай, когда происходит перенос в следующий разряд
+    int r = 0;
+    for(int i = 1; i <= a[0]; i++)
+    {
+        a[i] += b[i] + r;
+        
+        // If there is a transfer to the next category:
+        if(a[i] >= 10)
+        {
             r = 1;
-             a[i] -= 10;
+            a[i] -= 10;
         }
-        else{
-            // случай, когда переноса не происходит
+        else
+        {
              r = 0;
         }
     }
 
-    // если после сложения остался еще перенос, то нужно добавить еще одну цифру
-    if(r > 0){
+    // If there is still a transfer left after adding, then add another digit:
+    if(r > 0)
+    {
         a[0]++;
         a[a[0]] = r;
     }
@@ -69,33 +77,36 @@ vector<int> addition(vector<int> a, vector<int> b){
 
 
 /*
-----------------------------------------
-  функция вычитает из числа a число b
-----------------------------------------
+    The function subtracts the number 'b' from the number 'a':
 */
-
-vector<int> subtraction(vector<int> a, vector<int> b){
-    // r - обозначает был ли заем единицы из текущего разряда
+vector<int> subtraction(vector<int> a, vector<int> b)
+{
+    /*
+         r - indicates whether the unit was borrowed from the current digit of the number
+        There isn't loan from the lowest digit of the number
+    */
     int r = 0;
-    // заем из младшего разряда отсутствует
-    for(int i = 1; i <= a[0]; i++){
-        a[i] -= b[i] + r;
-        // разность очередных цифр с учетом заема
-        if(a[i] < 0){
-            // случай, когда происходит заем из следующего разряда
+    for(int i = 1; i <= a[0]; i++)
+    {
+        a[i] -= b[i] + r; // the difference in the next digits, including the loan
+        
+        // When is a loan made from the next digit of the number:
+        if(a[i] < 0)
+        {
             r = 1;
             a[i] += base;
         }
-        else{
-            // случай, когда заем не происходит
+        else
+        {
             r = 0;
         }
     }
     /*
-       Разность может содержать меньше цифр,
-       поэтому нужно при необходимости уменьшить количество цифр
+        The difference may contain fewer digits,
+        therefore, you need to reduce the number of digits if necessary
     */
-    while(a[0] > 1 && a[a[0]] == 0){
+    while((a[0] > 1) && (a[a[0]] == 0))
+    {
         --a[0];
     }
 
@@ -104,29 +115,33 @@ vector<int> subtraction(vector<int> a, vector<int> b){
 
 
 /*
------------------------------------------------
-  функция умножает число a на короткое число b
------------------------------------------------
+    The function multiplies the number 'a' by the short number 'b':
 */
-
-vector<int> multiplication (vector<int> a, int b){
-    // r - обозначает перенос в текущий разряд
+vector<int> multiplication (vector<int> a, int b)
+{
+    /*
+        r - indicates transfer to the current category
+        There isn't transfer to the lowest digit of the number
+    */
     int r = 0;
-    // перенос в младший разряд отсутствует
-    for(int i = 1; i <= a[0]; i++){
+    for(int i = 1; i <= a[0]; i++)
+    {
+        /*
+            The product of the next digit and a short number, taking into account
+            the transfer to the current digit, calculating the transfer to the next digit
+            (we leave only the part of multiplication smaller than base)
+        */
         a[i] = a[i] * b + r;
-        // произведение очередной цифры и короткого числа с учетом переноса в текущий разряд
         r = a[i] / base;
-        // вычисление переноса в следующий разряд
         a[i] -= r *base;
-        // оставляем только часть произведения меньшую base
     }
 
     /*
-       Если после умножения остался еще перенос, то нужно добавить еще цифру.
-       Может потребоваться добавить несколько цифр, если число b больше base
+        If there is still a carry after multiplication, then you need to add another digit.
+        You may need to add multiple digits if the number 'b' is greater than base
     */
-    while(r > 0){
+    while(r > 0)
+    {
         a[0]++;
         a[a[0]] = r % base;
         r = r / base;
@@ -136,25 +151,26 @@ vector<int> multiplication (vector<int> a, int b){
 }
 
 /*
-----------------------------------------
-  функция умножает число a на число b
-----------------------------------------
+    The function multiplies the number 'a' by the number 'b':
 */
-
-vector<int> multiplication_huge (vector<int> a, vector<int> b){
+vector<int> multiplication_huge (vector<int> a, vector<int> b)
+{
+    /*
+        'c' - the result of the multiplication,
+        in this case you can't write the result in the same array
+    */
     vector<int> c(max(a.size(), b.size()), 0);
 
-    // c - результат умножения. В данном случае нельзя записывать результат в тот же массив.
-
-    for(int i = 1; i <= a[0]; i++){
+    for(int i = 1; i <= a[0]; i++)
+    {
         int r = 0, j;
-        for(j = 1; j <= b[0] || r > 0; j++){
-            // пока есть перенос или в b есть еще цифры
+        for(j = 1; j <= b[0] || r > 0; j++)
+        {
+            // As long as there is a digit transfer or there are more digits in 'b':
             c[i + j - 1] += a[i] * b[j] + r;
             /*
-                при умножении на предыдущие цифры в c уже записано
-                некоторое значение, поэтому нужно прибавлять, а не
-                присваивать
+                When multiplying by the previous digits, some value is already written
+                in 'c', so you need to add, not assign:
             */
             r = c[i + j - 1] / base;
             c[i + j - 1] -= r * base;
@@ -162,11 +178,12 @@ vector<int> multiplication_huge (vector<int> a, vector<int> b){
     }
     c[0] = a[0] + b[0];
 
-    // максимально возможное количество цифр в ответе
-    a = c; // переместим ответ в массив a
+    // Move the answer to the 'a' array:
+    a = c;
 
-    // но цифр может оказаться меньше
-    while(a[0] > 1 && a[a[0]] == 0){
+    // There may be fewer numbers:
+    while((a[0] > 1) && (a[a[0]] == 0))
+    {
         --a[0];
     }
 
@@ -174,9 +191,13 @@ vector<int> multiplication_huge (vector<int> a, vector<int> b){
 }
 
 
-int main(){
-    string str1; cin >> str1;
-    string str2; cin >> str2;
+int main()
+{
+    string str1;
+    string str2;
+    
+    cin >> str1;
+    cin >> str2;
     
     return 0;
 }
