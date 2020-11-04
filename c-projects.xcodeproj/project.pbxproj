@@ -6,6 +6,10 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AD4C04382552BD390035E68A /* checking_expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADBA7297243CA17C003B7DCA /* checking_expression.cpp */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		ADDCC949242F70B7007B0857 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -35,27 +39,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		ADBA7294243CA13E003B7DCA /* long arithmetic */ = {
+		ADBA7294243CA13E003B7DCA /* long_arithmetic */ = {
 			isa = PBXGroup;
 			children = (
 				ADBA7295243CA13E003B7DCA /* long_arithmetic.cpp */,
 			);
-			path = "long arithmetic";
+			path = long_arithmetic;
 			sourceTree = SOURCE_ROOT;
 		};
-		ADBA7296243CA17C003B7DCA /* checking a mathematical expression */ = {
+		ADBA7296243CA17C003B7DCA /* checking_a_mathematical_expression */ = {
 			isa = PBXGroup;
 			children = (
 				ADBA7297243CA17C003B7DCA /* checking_expression.cpp */,
 			);
-			path = "checking a mathematical expression";
+			path = checking_a_mathematical_expression;
 			sourceTree = "<group>";
 		};
 		ADDCC942242F70B7007B0857 = {
 			isa = PBXGroup;
 			children = (
-				ADBA7296243CA17C003B7DCA /* checking a mathematical expression */,
-				ADBA7294243CA13E003B7DCA /* long arithmetic */,
+				ADBA7296243CA17C003B7DCA /* checking_a_mathematical_expression */,
+				ADBA7294243CA13E003B7DCA /* long_arithmetic */,
 				ADDCC94C242F70B7007B0857 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD4C04382552BD390035E68A /* checking_expression.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
