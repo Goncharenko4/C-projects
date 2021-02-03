@@ -1,7 +1,7 @@
-# Решение задач на языке C и C++
-### Практикумы
-- Длинная арифметика ([long arithmetic](.//long_arithmetic/long_arithmetic.cpp));
-- Проверка математического выражения на достоверность ([checking_expression](.//checking_a_mathematical_expression/checking_expression.cpp)).
+# Solving problems in C and C++
+### Practicum
+- Long arithmetic ([long arithmetic](.//long_arithmetic/long_arithmetic.cpp))
+- Checking the mathematical expression for validity ([checking_expression](.//checking_a_mathematical_expression/checking_expression.cpp)).
 
-### Задания
-- Задачи на асинхронное программирование ([asynchronous programming](./asynchronous_programming/)).
+### Tasks
+- Tasks on asynchronous programming ([asynchronous programming](./asynchronous_programming/)).

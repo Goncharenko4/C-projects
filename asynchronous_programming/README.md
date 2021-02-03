@@ -1,66 +1,89 @@
-## Задачи на асинхронное программирование
+## Tasks on asynchronous programming
 
-<b> [Squaring by sons](./squaring_by_sons.c): </b><br>
+<b> [Squaring by childs](./squaring_by_sons.c): </b><br>
     
-    На стандартном потоке ввода вводятся три строки текста, каждая из которых содержит
-    целое 32-битное знаковое число. Длина каждой строки — ровно 8 символов с учетом завершающего символа \n.
-    Процесс-отец создает трех сыновей, которые работают параллельно друг другу.
-    Сыновья получают порядковые номера 1, 2, 3. Каждый процесс обрабатывет одну из строк входных данных.
-    Каждый процесс выводит на стандартный поток вывода свой порядковый номер
-    и квадрат числа, считанного из входной строки. Обработка заключается в чтении значения из файла,
-    вычислении значения и выводе результата. Стандартный поток ввода не является файлом произвольного
-    доступа (является каналом). Результат возведения в квадрат представим 32-битным знаковым типом.
-    Каждый результат должен быть записан на отдельной строке. Порядок вывода строк значения не имеет.
-    Для вывода использовать средства высокого уровня.
-    Процесс-родитель должен завершаться самым последним из всех процессов.
+    On a standard input stream, three lines of text are entered, each containing
+    a 32-bit signed integer. The length of each line is exactly 8 characters,
+    including the ending character '\n'.
+    The parent process creates three childs that work in a parallel with each other.
+    The child receives sequen numbers 1, 2, and 3. Each process processes one of the input data rows.
+    Each process outputs its sequence number and the square of the number read
+    from the input string to the standard output stream.
+    
+    Processing consists of reading the value from the file, calculating the value
+    and outputting the result. The standard input stream is not a random access file
+    (it is a channel). The result of squaring is represented as a 32-bit signed type.
+    
+    Each result must be written on a separate line. The order in which the rows are output
+    does not matter. The parent process must end with the most recent of all processes.
 
 <br> <b> [Current time](./current_time.c): </b><br>
     
-    Родитель создает сына, тот — внука, а тот — правнука. Правнук передает в канал текущее время, полученное
-    с помощью системного вызова time, в бинарном виде (тип time_t).
-     
-    Отец, сын и внук считывают время из канала. Процесс-отец выводит на экран строку "Y:????",
-    где ???? заменяются на текущий год, сын — "M:??", где ?? заменяются на текущий месяц в году (от 1 до 12),
-    число всегда выводится с двумя знаками, внук — "D:??", где ?? заменяются на номер дня в месяце,
-    всегда выводящееся с двумя знаками.
-     
-    Внук должен вывести число первым, сын — вторым, а отец — третьим. Записывать в канал разрешается
-    только правнуку. Родитель должен дождаться завершения всех процессов и завершиться сам с кодом 0.
-     
-    Пример вывода:
+    A parent creates a child, a grandchild, and a great-grandchild.
+    The great-grandchild sends the current time received
+    using system call "time" to the channel in binary form (time_t type).
+    
+    Parent, child, and grandchild read the time from the channel.
+    The father process displays the string "Y:????",
+    where ???? replaced with the current year, child — "M:??",
+    where ?? are replaced with the current month of the year (from 1 to 12),
+    the number is always output with two characters, the grandchild is "D:??",
+    where ?? replaced with the number of the day in the month,
+    always output with two characters.
+    
+    The grandchild should print the number first, the child - second,
+    the father - third.
+    Only a great-grandchild is allowed to write to the channel. The parent must wait
+    for all processes to complete and then terminate itself with code 0.
+    
+    Example output:
     D:11
     M:09
     Y:2001
     
 <br> <b> [Two linked channels](./two_linked_channels.c): </b><br>
     
-    Родитель создает двух сыновей, связывая их двумя каналами. Сыновья начинают обмениваться числами 1, 2, 3, ...
-    Число 1 получает первый сын. При получении числа из входного канала каждый сын печатает на стандартный поток
-    вывода родителя свой номер (1 или 2) и полученное число и пересылает обратно число, на 1 большее.
-    При достижении числа, задаваемого в командной строке, сын не пересылает число в канал, а завершает работу.
-     
-    Процесс может завершить работу либо при получении максимального числа из канала, либо при наступлении
-    конца файла в канале. Завершать процесс в других случаях не разрешается.
-     
-    Отец дожидается завершения работы обоих процессов, затем выводит строку Done и завершает работу.
+    A parent creates two childs by linking them with two channels.
+    The childs start exchanging the numbers 1, 2, 3, ...
+    the first child gets the Number 1. When getting a number from
+    input channel each child prints to a standard stream
+    output the parent's own number (1 or 2) and the resulting number
+    and sends back a number that is 1 higher.
+    When the number specified in the command line is reached,
+    the child does not forward the number to the channel, but shuts down.
     
-    Если в командной строке передано число 5, pid первого процесса - 100,
-    pid второго процесса - 101, то вывод должен быть таким:
-    11
-    22
-    13
-    24
+    The process can terminate either upon receipt
+    the maximum number from the channel, or when
+    end of file in the channel. Complete the process in other settings
+    cases are not allowed.
+    
+    The father waits for both processes to complete,
+    then outputs the Done string and exits.
+    
+    If the number 5 is passed in the command line,
+    the pid of the first process is 100, the pid of the second process is 101,
+    then the output should be:
+    11 
+    22 
+    13 
+    24 
     Done
     
 <br> <b> [Digital speedometer](./digital_speedometer.c): </b><br>
     
-    Программе в аргументах командной строки передается начальная скорость (32-битное целое знаковое число).
-    Программа моделирует работу цифрового спидометра. Цифровой спидометр должен обрабатывать прерывания
-    от таймера, которые будут моделироваться с помощью сигнала ALRM. Сигналы USR1 и USR2 поступают от акселерометра, 
-    USR1 означает, что скорость увеличилась на одну единицу, а USR2 означает, что скорость уменьшилась на одну единицу.
-    По сигналу TERM программа должна вывести на стандартный поток вывода пройденное растояние
-    (на момент последнего обработанного ALRM) и завершить работу. Все единицы измерения
-    (время между прерываниями от таймера, скорость, ускорение) согласованы друг с другом, то есть никаких масштабных
-    коэффициентов не требуется. Стандартный ввод и стандартный вывод программы будут перенаправлены в каналы.
-    С другой стороны каналов находится процесс, который начинает свою работу как только получит pid процесса. 
-    От вывода pid до прихода первого ALRM проходит одна единица времени.
+    The program simulates the operation of a digital speedometer.
+    
+    The initial speed (a 32-bit signed integer) required
+    by this program are specified on the command line.
+    The digital speedometer handles timer interrupts that are modeled using the ALRM signal.
+    The USR1 and USR2 signals come from the accelerometer,
+    USR1 means that the speed has increased by one unit and USR2 means that
+    the speed has decreased by one unit.
+    At the TERM signal, the program outputs the distance traveled
+    (at the time of the last processed ALRM) to the standard output stream and exits.
+    All units of measurement (time between timer interrupts, speed, acceleration)
+    are consistent with each other, so no scale factors are required.
+    Standard input and standard output of the program will be redirected to channels.
+    Don't forget to reset the output buffer. On the other side of the channels
+    is a process that starts its work as soon as it receives the pid of the process.
+    One unit of change time passes from the output of the pid to the arrival of the first ALRM.
