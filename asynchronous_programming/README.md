@@ -1,6 +1,6 @@
 ## Tasks on asynchronous programming
 
-<b> [Squaring by childs](./squaring_by_sons.c): </b><br>
+<b> [Squaring by childs](./squaring_by_childs.c): </b><br>
     
     On a standard input stream, three lines of text are entered, each containing
     a 32-bit signed integer. The length of each line is exactly 8 characters,
