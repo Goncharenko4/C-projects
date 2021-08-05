@@ -63,10 +63,10 @@
     If the number 5 is passed in the command line,
     the pid of the first process is 100, the pid of the second process is 101,
     then the output should be:
-    11 
-    22 
-    13 
-    24 
+    11
+    22
+    13
+    24
     Done
     
 <br> <b> [Digital speedometer](./digital_speedometer.c): </b><br>
