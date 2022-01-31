@@ -13,21 +13,21 @@ int main(int argc, char **argv) {
     /* Maximum number from the command line: */
     int max;
     sscanf(argv[1], "%d", &max);
-    
+
     /*
         Channel for writing by the 2nd process to the 1st process
         and reading from the 1st process to the 2nd process:
     */
     int fd[2];
     pipe(fd);
-    
+
     /*
         Channel for writing the 1st process to the 2nd process
         and reading by the 2nd process of the 1st process:
     */
     int fd2[2];
     pipe(fd2);
-    
+
     if (fork() == 0) {
         close(fd[1]);
         close(fd2[0]);
@@ -44,14 +44,14 @@ int main(int argc, char **argv) {
         close(fd2[1]);
         exit(0);
     }
-    
+
     if (fork() == 0) {
         int init_tmp = 1;
         write(fd[1], &init_tmp, sizeof(int));
-        
+
         close(fd2[1]);
         close(fd[0]);
-        
+
         int tmp2;
         while (read(fd2[0], &tmp2, sizeof(int))) {
             if (tmp2 >= max) {
@@ -65,16 +65,16 @@ int main(int argc, char **argv) {
         close(fd2[0]);
         exit(0);
     }
-    
+
     close(fd[0]);
     close(fd[1]);
     close(fd2[0]);
     close(fd2[1]);
-    
+
     wait(NULL);
     wait(NULL);
-    
+
     printf("Done\n");
-    
+
     return 0;
 }

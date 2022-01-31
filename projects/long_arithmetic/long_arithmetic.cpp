@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int base = 10; // number system
+int base = 10;  // number system
 
 /*
     The function divides the number 'a' by a short number 'b'
@@ -17,8 +17,8 @@ int Remainder_of_the_division(vector<int> a, int b) {
         Initially the remainder is 0
     */
     int r = 0;
-    unsigned long n1 = a.size(); // length of a large number
-    
+    unsigned long n1 = a.size();  // length of a large number
+
     /*
         Cycle from the highest digits to the lowest, assigning the next digit
         Writing a quotient of division to the result
@@ -38,7 +38,7 @@ vector<int> addition(vector<int> a, vector<int> b) {
     if (a[0] < b[0]) {
         a[0] = b[0];
     }
-    
+
     /*
          You need to add up to the size of a larger number
          r - indicates how much we have "keep in mind"
@@ -47,13 +47,13 @@ vector<int> addition(vector<int> a, vector<int> b) {
     int r = 0;
     for (int i = 1; i <= a[0]; i++) {
         a[i] += b[i] + r;
-        
+
         // If there is a transfer to the next category:
         if (a[i] >= 10) {
             r = 1;
             a[i] -= 10;
         } else {
-             r = 0;
+            r = 0;
         }
     }
 
@@ -65,7 +65,6 @@ vector<int> addition(vector<int> a, vector<int> b) {
     return a;
 }
 
-
 /*
     The function subtracts the number 'b' from the number 'a':
 */
@@ -76,8 +75,8 @@ vector<int> subtraction(vector<int> a, vector<int> b) {
     */
     int r = 0;
     for (int i = 1; i <= a[0]; i++) {
-        a[i] -= b[i] + r; // the difference in the next digits, including the loan
-        
+        a[i] -= b[i] + r;  // the difference in the next digits, including the loan
+
         // When is a loan made from the next digit of the number:
         if (a[i] < 0) {
             r = 1;
@@ -96,11 +95,10 @@ vector<int> subtraction(vector<int> a, vector<int> b) {
     return a;
 }
 
-
 /*
     The function multiplies the number 'a' by the short number 'b':
 */
-vector<int> multiplication (vector<int> a, int b) {
+vector<int> multiplication(vector<int> a, int b) {
     /*
         r - indicates transfer to the current category
         There isn't transfer to the lowest digit of the number
@@ -114,7 +112,7 @@ vector<int> multiplication (vector<int> a, int b) {
         */
         a[i] = a[i] * b + r;
         r = a[i] / base;
-        a[i] -= r *base;
+        a[i] -= r * base;
     }
 
     /*
@@ -132,7 +130,7 @@ vector<int> multiplication (vector<int> a, int b) {
 /*
     The function multiplies the number 'a' by the number 'b':
 */
-vector<int> multiplication_huge (vector<int> a, vector<int> b) {
+vector<int> multiplication_huge(vector<int> a, vector<int> b) {
     /*
         'c' - the result of the multiplication,
         in this case you can't write the result in the same array
@@ -167,9 +165,9 @@ vector<int> multiplication_huge (vector<int> a, vector<int> b) {
 int main() {
     string str1;
     string str2;
-    
+
     cin >> str1;
     cin >> str2;
-    
+
     return 0;
 }

@@ -33,7 +33,7 @@ int main() {
         fflush(stdout);
         exit(0);
     }
-    
+
     wait(NULL);
     wait(NULL);
     wait(NULL);

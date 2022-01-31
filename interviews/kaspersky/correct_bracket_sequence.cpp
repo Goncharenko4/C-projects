@@ -3,10 +3,9 @@
 
 bool valid_pair(char prev, char cur) {
     return (
-        (prev == '(' && cur == ')') || 
-        (prev == '{' && cur == '}') || 
-        (prev == '[' && cur == ']')
-    );
+        (prev == '(' && cur == ')') ||
+        (prev == '{' && cur == '}') ||
+        (prev == '[' && cur == ']'));
 }
 
 bool check(std::string &s) {

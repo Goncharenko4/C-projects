@@ -6,6 +6,10 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AD78EBE527A7C11700242311 /* 5_task.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD78EBDC27A19C2D00242311 /* 5_task.cpp */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		ADDCC949242F70B7007B0857 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -21,10 +25,6 @@
 /* Begin PBXFileReference section */
 		AD484BF026BBD319006BCD4E /* .clang-format */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".clang-format"; sourceTree = "<group>"; };
 		AD484BF126BBD324006BCD4E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		AD484BF426BBD332006BCD4E /* solve.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = solve.cpp; sourceTree = "<group>"; };
-		AD484BF526BBD332006BCD4E /* init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = init.cpp; sourceTree = "<group>"; };
-		AD484BF626BBD332006BCD4E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		AD484BF826BBD332006BCD4E /* correct_bracket_sequence.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = correct_bracket_sequence.cpp; sourceTree = "<group>"; };
 		AD484BFB26BBD332006BCD4E /* long_arithmetic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = long_arithmetic.cpp; sourceTree = "<group>"; };
 		AD484BFD26BBD332006BCD4E /* checking_expression.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = checking_expression.cpp; sourceTree = "<group>"; };
 		AD484BFE26BBD332006BCD4E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -35,7 +35,27 @@
 		AD484C0426BBD332006BCD4E /* two_linked_channels.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = two_linked_channels.c; sourceTree = "<group>"; };
 		AD484C0626BBD332006BCD4E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AD484C0726BBD332006BCD4E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		ADDCC94B242F70B7007B0857 /* C-projects */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "C-projects"; path = "/Users/evgenijgoncarenko/Documents/program/github/c-projects/build/Debug/C-projects"; sourceTree = "<absolute>"; };
+		AD78EBBD279831DE00242311 /* 3_task.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 3_task.cpp; sourceTree = "<group>"; };
+		AD78EBBE279831DE00242311 /* 1_task.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1_task.cpp; sourceTree = "<group>"; };
+		AD78EBBF279831DE00242311 /* 2_task.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2_task.cpp; sourceTree = "<group>"; };
+		AD78EBC0279831DE00242311 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AD78EBC3279831DE00242311 /* 1_task.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1_task.cpp; sourceTree = "<group>"; };
+		AD78EBC4279831DE00242311 /* 2_task.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2_task.cpp; sourceTree = "<group>"; };
+		AD78EBC5279831DE00242311 /* 3_task.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 3_task.cpp; sourceTree = "<group>"; };
+		AD78EBCB279831DE00242311 /* correct_bracket_sequence.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = correct_bracket_sequence.cpp; sourceTree = "<group>"; };
+		AD78EBCD2798340A00242311 /* 4_task.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 4_task.cpp; sourceTree = "<group>"; };
+		AD78EBD0279834BD00242311 /* 5_task.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 5_task.cpp; sourceTree = "<group>"; };
+		AD78EBD2279834F200242311 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AD78EBD4279851A900242311 /* README.ru.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.ru.md; sourceTree = "<group>"; };
+		AD78EBD927A19C2D00242311 /* 3_task.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 3_task.cpp; sourceTree = "<group>"; };
+		AD78EBDA27A19C2D00242311 /* 2_task.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2_task.cpp; sourceTree = "<group>"; };
+		AD78EBDB27A19C2D00242311 /* 4_task.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 4_task.cpp; sourceTree = "<group>"; };
+		AD78EBDC27A19C2D00242311 /* 5_task.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 5_task.cpp; sourceTree = "<group>"; };
+		AD78EBDD27A19C2D00242311 /* 1_task.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1_task.cpp; sourceTree = "<group>"; };
+		AD78EBDE27A19D7100242311 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AD78EBDF27A19D7100242311 /* README.ru.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.ru.md; sourceTree = "<group>"; };
+		AD78EBE027A6C6C300242311 /* 6_task.go */ = {isa = PBXFileReference; lastKnownFileType = text; path = 6_task.go; sourceTree = "<group>"; };
+		ADEA049D26FDBA3C00BA207E /* C-projects */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "C-projects"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,33 +69,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AD484BF226BBD332006BCD4E /* interviews */ = {
-			isa = PBXGroup;
-			children = (
-				AD484BF326BBD332006BCD4E /* fix_errors */,
-				AD484BF626BBD332006BCD4E /* README.md */,
-				AD484BF726BBD332006BCD4E /* correct_bracket_sequence */,
-			);
-			path = interviews;
-			sourceTree = "<group>";
-		};
-		AD484BF326BBD332006BCD4E /* fix_errors */ = {
-			isa = PBXGroup;
-			children = (
-				AD484BF426BBD332006BCD4E /* solve.cpp */,
-				AD484BF526BBD332006BCD4E /* init.cpp */,
-			);
-			path = fix_errors;
-			sourceTree = "<group>";
-		};
-		AD484BF726BBD332006BCD4E /* correct_bracket_sequence */ = {
-			isa = PBXGroup;
-			children = (
-				AD484BF826BBD332006BCD4E /* correct_bracket_sequence.cpp */,
-			);
-			path = correct_bracket_sequence;
-			sourceTree = "<group>";
-		};
 		AD484BF926BBD332006BCD4E /* projects */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,15 +116,83 @@
 			path = codeforces;
 			sourceTree = "<group>";
 		};
+		AD78EBBB279831DE00242311 /* interviews */ = {
+			isa = PBXGroup;
+			children = (
+				AD78EBC0279831DE00242311 /* README.md */,
+				AD78EBBC279831DE00242311 /* adalisk */,
+				AD78EBC1279831DE00242311 /* yandex */,
+				AD78EBCA279831DE00242311 /* kaspersky */,
+			);
+			path = interviews;
+			sourceTree = "<group>";
+		};
+		AD78EBBC279831DE00242311 /* adalisk */ = {
+			isa = PBXGroup;
+			children = (
+				AD78EBBE279831DE00242311 /* 1_task.cpp */,
+				AD78EBBF279831DE00242311 /* 2_task.cpp */,
+				AD78EBBD279831DE00242311 /* 3_task.cpp */,
+			);
+			path = adalisk;
+			sourceTree = "<group>";
+		};
+		AD78EBC1279831DE00242311 /* yandex */ = {
+			isa = PBXGroup;
+			children = (
+				AD78EBC2279831DE00242311 /* test */,
+				AD78EBD827A19C2D00242311 /* main_stage  */,
+			);
+			path = yandex;
+			sourceTree = "<group>";
+		};
+		AD78EBC2279831DE00242311 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				AD78EBD2279834F200242311 /* README.md */,
+				AD78EBD4279851A900242311 /* README.ru.md */,
+				AD78EBC3279831DE00242311 /* 1_task.cpp */,
+				AD78EBC4279831DE00242311 /* 2_task.cpp */,
+				AD78EBC5279831DE00242311 /* 3_task.cpp */,
+				AD78EBCD2798340A00242311 /* 4_task.cpp */,
+				AD78EBD0279834BD00242311 /* 5_task.cpp */,
+				AD78EBE027A6C6C300242311 /* 6_task.go */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		AD78EBCA279831DE00242311 /* kaspersky */ = {
+			isa = PBXGroup;
+			children = (
+				AD78EBCB279831DE00242311 /* correct_bracket_sequence.cpp */,
+			);
+			path = kaspersky;
+			sourceTree = "<group>";
+		};
+		AD78EBD827A19C2D00242311 /* main_stage  */ = {
+			isa = PBXGroup;
+			children = (
+				AD78EBDE27A19D7100242311 /* README.md */,
+				AD78EBDF27A19D7100242311 /* README.ru.md */,
+				AD78EBDD27A19C2D00242311 /* 1_task.cpp */,
+				AD78EBDA27A19C2D00242311 /* 2_task.cpp */,
+				AD78EBD927A19C2D00242311 /* 3_task.cpp */,
+				AD78EBDB27A19C2D00242311 /* 4_task.cpp */,
+				AD78EBDC27A19C2D00242311 /* 5_task.cpp */,
+			);
+			path = "main_stage ";
+			sourceTree = "<group>";
+		};
 		ADDCC942242F70B7007B0857 = {
 			isa = PBXGroup;
 			children = (
+				AD78EBBB279831DE00242311 /* interviews */,
 				AD484C0526BBD332006BCD4E /* codeforces */,
-				AD484BF226BBD332006BCD4E /* interviews */,
 				AD484BF926BBD332006BCD4E /* projects */,
 				AD484C0726BBD332006BCD4E /* README.md */,
 				AD484BF126BBD324006BCD4E /* .gitignore */,
 				AD484BF026BBD319006BCD4E /* .clang-format */,
+				ADEA049D26FDBA3C00BA207E /* C-projects */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,7 +213,7 @@
 			);
 			name = "C-projects";
 			productName = "C-projects";
-			productReference = ADDCC94B242F70B7007B0857 /* C-projects */;
+			productReference = ADEA049D26FDBA3C00BA207E /* C-projects */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -161,7 +222,7 @@
 		ADDCC943242F70B7007B0857 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = "Евгений Гончаренко";
 				TargetAttributes = {
 					ADDCC94A242F70B7007B0857 = {
@@ -192,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD78EBE527A7C11700242311 /* 5_task.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +286,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -282,6 +345,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -310,6 +374,7 @@
 		ADDCC953242F70B8007B0857 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UQHH9ZC9FS;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -320,6 +385,7 @@
 		ADDCC954242F70B8007B0857 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UQHH9ZC9FS;
 				ENABLE_HARDENED_RUNTIME = YES;
